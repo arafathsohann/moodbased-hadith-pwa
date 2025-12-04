@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import InstallPrompt from "@/components/InstallPrompt";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,6 +21,10 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "default",
     title: "Islamic Mood",
+  },
+  icons: {
+    icon: "/icon.jpg",
+    apple: "/icon.jpg",
   },
 };
 
@@ -41,6 +46,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FDFBF7] text-gray-800`}
       >
         {children}
+        <InstallPrompt />
       </body>
     </html>
   );

@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@ducanh2912/next-pwa": "^10.2.9",
     "framer-motion": "^12.23.25",
     "lucide-react": "^0.555.0",
     "next": "16.0.6",
@@ -23,6 +24,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "workbox-webpack-plugin": "^7.4.0"
   }
 }
