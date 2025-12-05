@@ -341,7 +341,7 @@ export default function Home() {
             dragConstraints={{ left: 0, right: 0 }}
             onDragEnd={handleDragEnd}
           >
-            <div className="bg-white dark:bg-slate-900/90 rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-white/50 dark:border-white/20 relative overflow-hidden w-full">
+            <div className="bg-white dark:bg-slate-800/95 rounded-[2rem] p-6 md:p-10 shadow-2xl border border-white/50 dark:border-white/20 relative overflow-hidden w-full max-h-[80vh] flex flex-col">
               {/* Decorative quote mark */}
               <Quote className="absolute top-8 left-8 text-black/5 dark:text-white/5 w-24 h-24 -z-10 rotate-180" />
 
@@ -350,9 +350,10 @@ export default function Home() {
                 <ChevronRight className="w-8 h-8 text-gray-400" />
               </div>
 
-              <div className="flex justify-between items-center mb-10">
+              <div className="flex justify-between items-center mb-6 shrink-0 z-50 relative">
                 <button
                   onClick={reset}
+                  onPointerDown={(e) => e.stopPropagation()}
                   className="flex items-center gap-2 text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors group px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10"
                 >
                   <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
@@ -372,25 +373,25 @@ export default function Home() {
                   animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, x: -20, filter: "blur(4px)" }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="flex flex-col gap-8 text-center"
+                  className="flex flex-col gap-5 text-center overflow-y-auto custom-scrollbar px-2 py-2"
                 >
                   {/* Arabic Text */}
                   <div className="relative">
-                    <p className="text-3xl md:text-5xl leading-[1.8] font-serif text-gray-800 dark:text-white font-medium drop-shadow-sm" dir="rtl" lang="ar">
+                    <p className="text-2xl md:text-4xl leading-relaxed font-serif text-gray-800 dark:text-white font-medium drop-shadow-sm" dir="rtl" lang="ar">
                       {quote?.arabic}
                     </p>
                   </div>
 
                   {/* English Translation */}
                   <div className="space-y-2">
-                    <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-200 leading-relaxed font-light italic">
+                    <p className="text-lg md:text-xl text-gray-700 dark:text-gray-200 leading-snug font-light italic">
                       &quot;{quote?.english}&quot;
                     </p>
                   </div>
 
                   {/* Bangla Translation */}
                   <div className="space-y-2">
-                    <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-light">
+                    <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-snug font-light">
                       {quote?.bangla}
                     </p>
                   </div>
@@ -410,7 +411,7 @@ export default function Home() {
                 </motion.div>
               </AnimatePresence>
 
-              <div className="mt-12 flex justify-center">
+              <div className="mt-6 flex justify-center shrink-0">
                 <button
                   onClick={() => selectedMood && handleMoodSelect(selectedMood)}
                   className="group relative px-8 py-3.5 rounded-full bg-gray-900/90 dark:bg-white/90 text-white dark:text-gray-900 font-medium hover:bg-gray-900 dark:hover:bg-white transition-all shadow-lg hover:shadow-xl active:scale-95 flex items-center gap-3 overflow-hidden backdrop-blur-sm"
