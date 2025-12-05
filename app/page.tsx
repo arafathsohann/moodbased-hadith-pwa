@@ -29,69 +29,69 @@ const moodData = moodDataRaw as MoodItem[];
 const moodConfig: Record<string, MoodConfigItem> = {
   "Anxious": {
     label: "Anxious", emoji: "😰",
-    color: "text-blue-600 dark:text-blue-400",
+    color: "text-blue-600 dark:text-blue-300",
     gradient: "from-blue-50 to-blue-100",
-    darkGradient: "from-blue-950 to-slate-900"
+    darkGradient: "from-slate-950 to-blue-950"
   },
   "Happyness": {
     label: "Happy", emoji: "😊",
-    color: "text-yellow-600 dark:text-yellow-400",
+    color: "text-yellow-600 dark:text-yellow-300",
     gradient: "from-yellow-50 to-yellow-100",
-    darkGradient: "from-yellow-950 to-slate-900"
+    darkGradient: "from-slate-950 to-yellow-950"
   },
   "Gurding From Evil": {
     label: "Protection", emoji: "🛡️",
-    color: "text-purple-600 dark:text-purple-400",
+    color: "text-purple-600 dark:text-purple-300",
     gradient: "from-purple-50 to-purple-100",
-    darkGradient: "from-purple-950 to-slate-900"
+    darkGradient: "from-slate-950 to-purple-950"
   },
   "Feeling Sad": {
     label: "Sad", emoji: "😢",
-    color: "text-indigo-600 dark:text-indigo-400",
+    color: "text-indigo-600 dark:text-indigo-300",
     gradient: "from-indigo-50 to-indigo-100",
-    darkGradient: "from-indigo-950 to-slate-900"
+    darkGradient: "from-slate-950 to-indigo-950"
   },
   "Pursuing Forgiveness": {
     label: "Forgiveness", emoji: "🤲",
-    color: "text-emerald-600 dark:text-emerald-400",
+    color: "text-emerald-600 dark:text-emerald-300",
     gradient: "from-emerald-50 to-emerald-100",
-    darkGradient: "from-emerald-950 to-slate-900"
+    darkGradient: "from-slate-950 to-emerald-950"
   },
   "Seeking Health": {
     label: "Health", emoji: "🤒",
-    color: "text-teal-600 dark:text-teal-400",
+    color: "text-teal-600 dark:text-teal-300",
     gradient: "from-teal-50 to-teal-100",
-    darkGradient: "from-teal-950 to-slate-900"
+    darkGradient: "from-slate-950 to-teal-950"
   },
   "Depression": {
     label: "Depressed", emoji: "🌧️",
-    color: "text-slate-600 dark:text-slate-400",
+    color: "text-slate-600 dark:text-slate-300",
     gradient: "from-slate-100 to-slate-200",
-    darkGradient: "from-slate-900 to-black"
+    darkGradient: "from-slate-950 to-black"
   },
   "intense desire or temptation": {
     label: "Temptation", emoji: "🔥",
-    color: "text-red-600 dark:text-red-400",
+    color: "text-red-600 dark:text-red-300",
     gradient: "from-red-50 to-red-100",
-    darkGradient: "from-red-950 to-slate-900"
+    darkGradient: "from-slate-950 to-red-950"
   },
   "comfort": {
     label: "Need Comfort", emoji: "🛋️",
-    color: "text-orange-600 dark:text-orange-400",
+    color: "text-orange-600 dark:text-orange-300",
     gradient: "from-orange-50 to-orange-100",
-    darkGradient: "from-orange-950 to-slate-900"
+    darkGradient: "from-slate-950 to-orange-950"
   },
   "confusion and uncertainty about the future": {
     label: "Confused", emoji: "😕",
-    color: "text-gray-600 dark:text-gray-400",
+    color: "text-gray-600 dark:text-gray-300",
     gradient: "from-gray-100 to-gray-200",
-    darkGradient: "from-gray-900 to-slate-950"
+    darkGradient: "from-slate-950 to-gray-900"
   },
   "anger": {
     label: "Angry", emoji: "😠",
-    color: "text-rose-600 dark:text-rose-400",
+    color: "text-rose-600 dark:text-rose-300",
     gradient: "from-rose-50 to-rose-100",
-    darkGradient: "from-rose-950 to-slate-900"
+    darkGradient: "from-slate-950 to-rose-950"
   },
 };
 
@@ -239,7 +239,7 @@ export default function Home() {
       <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center z-20">
         <div className="flex items-center gap-2 bg-white/30 dark:bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 dark:border-white/10">
           <Flame className={`w-5 h-5 ${streak > 0 ? 'text-orange-500 fill-orange-500' : 'text-gray-400'}`} />
-          <span className="font-bold text-gray-700 dark:text-gray-200">{streak}</span>
+          <span className="font-bold text-gray-700 dark:text-white">{streak}</span>
         </div>
 
         <div className="flex gap-3">
@@ -251,7 +251,7 @@ export default function Home() {
           </button>
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
-            className="p-2.5 rounded-full bg-white/30 dark:bg-black/30 backdrop-blur-md border border-white/20 dark:border-white/10 text-gray-700 dark:text-gray-200 hover:bg-white/50 transition-colors"
+            className="p-2.5 rounded-full bg-white/30 dark:bg-black/30 backdrop-blur-md border border-white/20 dark:border-white/20 text-gray-700 dark:text-white hover:bg-white/50 transition-colors"
           >
             {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
@@ -276,15 +276,15 @@ export default function Home() {
             ) : (
               <div className="space-y-4 pb-20">
                 {favorites.map((fav, idx) => (
-                  <div key={idx} className="bg-white/60 dark:bg-slate-900/60 backdrop-blur-md p-6 rounded-2xl border border-white/40 dark:border-white/10 shadow-sm relative group">
+                  <div key={idx} className="bg-white/60 dark:bg-slate-800/80 backdrop-blur-md p-6 rounded-2xl border border-white/40 dark:border-white/20 shadow-sm relative group">
                     <button
                       onClick={() => toggleFavorite(fav)}
                       className="absolute top-4 right-4 text-red-500 opacity-50 group-hover:opacity-100 transition-opacity"
                     >
                       <X className="w-4 h-4" />
                     </button>
-                    <p className="text-xl font-serif text-gray-800 dark:text-gray-200 mb-2" dir="rtl">{fav.arabic}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 italic mb-2">&quot;{fav.english}&quot;</p>
+                    <p className="text-xl font-serif text-gray-800 dark:text-white mb-2" dir="rtl">{fav.arabic}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 italic mb-2">&quot;{fav.english}&quot;</p>
                     <p className="text-xs text-gray-400 uppercase tracking-wider">{fav.reference}</p>
                   </div>
                 ))}
@@ -321,7 +321,7 @@ export default function Home() {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleMoodSelect(key)}
                   className={`group p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center gap-4 
-                    bg-white/40 dark:bg-slate-800/40 backdrop-blur-sm border border-white/60 dark:border-white/10 hover:border-white/80 dark:hover:border-white/20`}
+                    bg-white/40 dark:bg-slate-800/60 backdrop-blur-sm border border-white/60 dark:border-white/20 hover:border-white/80 dark:hover:border-white/40`}
                 >
                   <span className="text-5xl filter drop-shadow-sm group-hover:scale-110 transition-transform duration-300">{config.emoji}</span>
                   <span className={`font-medium text-lg ${config.color} transition-colors`}>{config.label}</span>
@@ -341,7 +341,7 @@ export default function Home() {
             dragConstraints={{ left: 0, right: 0 }}
             onDragEnd={handleDragEnd}
           >
-            <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-white/50 dark:border-white/10 relative overflow-hidden w-full">
+            <div className="bg-white dark:bg-slate-900/90 rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-white/50 dark:border-white/20 relative overflow-hidden w-full">
               {/* Decorative quote mark */}
               <Quote className="absolute top-8 left-8 text-black/5 dark:text-white/5 w-24 h-24 -z-10 rotate-180" />
 
@@ -353,7 +353,7 @@ export default function Home() {
               <div className="flex justify-between items-center mb-10">
                 <button
                   onClick={reset}
-                  className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors group px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10"
+                  className="flex items-center gap-2 text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors group px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10"
                 >
                   <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
                   <span className="font-medium">Back</span>
@@ -376,21 +376,21 @@ export default function Home() {
                 >
                   {/* Arabic Text */}
                   <div className="relative">
-                    <p className="text-3xl md:text-5xl leading-[1.8] font-serif text-gray-800 dark:text-gray-100 font-medium drop-shadow-sm" dir="rtl" lang="ar">
+                    <p className="text-3xl md:text-5xl leading-[1.8] font-serif text-gray-800 dark:text-white font-medium drop-shadow-sm" dir="rtl" lang="ar">
                       {quote?.arabic}
                     </p>
                   </div>
 
                   {/* English Translation */}
                   <div className="space-y-2">
-                    <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed font-light italic">
+                    <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-200 leading-relaxed font-light italic">
                       &quot;{quote?.english}&quot;
                     </p>
                   </div>
 
                   {/* Bangla Translation */}
                   <div className="space-y-2">
-                    <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed font-light">
+                    <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-light">
                       {quote?.bangla}
                     </p>
                   </div>
