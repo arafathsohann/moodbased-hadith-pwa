@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     title: "Islamic Mood",
   },
   icons: {
-    icon: "/icon.jpg",
-    apple: "/icon.jpg",
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
 };
 
